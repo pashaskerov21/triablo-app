@@ -1,0 +1,30 @@
+.general-navbar{
+    width: 100%;
+    padding: 25px 0;
+    .container{
+        @include center;
+        .row{
+            width: 100%;
+            .col-12, .col-10{
+                @include center;
+            }
+        }
+    }
+    .right{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .buttons{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .theme-button{
+            font-size: 24px;
+            margin-left: 10px;
+        }
+    }
+}
+
+
+

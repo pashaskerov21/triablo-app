@@ -1,0 +1,135 @@
+.black-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 990;
+    opacity: 0;
+    transition: all 0.3s;
+    animation: backdrop-animation 0.3s ease forwards;
+}
+
+@keyframes backdrop-animation {
+    100% {
+        opacity: 1;
+    }
+}
+
+.nav-links {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    top: 0;
+    left: -100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 999;
+
+    &.active {
+        left: 0;
+    }
+
+    .menu-header {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    a {
+        text-transform: capitalize;
+        font-size: 20px;
+        padding: 10px 30px;
+        border-radius: 20px;
+        margin-bottom: 5px;
+        color: #000;
+        font-weight: 600;
+        transform: translateX(-50px);
+        opacity: 0;
+
+        cursor: pointer;
+
+        &.link-animation {
+            animation: link-animation-1 0.5s ease forwards;
+        }
+
+        &.active {
+            background-color: var(--primary-color);
+            color: #fff !important;
+        }
+
+        &:hover {
+            background-color: var(--primary-color);
+            color: #fff !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .nav-links {
+        position: relative;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        min-width: 700px;
+        max-width: 700px;
+        min-height: 20px;
+        margin-right: 15px;
+        left: 0;
+
+        a {
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            transform: translateX(0) translateY(-50px);
+            animation: link-animation-2 0.5s ease forwards;
+            font-size: 18px;
+
+            &:hover {
+                color: var(--primary-color) !important;
+                background-color: transparent;
+
+                &::after {
+                    background-color: var(--primary-color);
+                    transform: scaleX(1);
+                }
+            }
+
+            &.active {
+                color: var(--primary-color) !important;
+                background-color: transparent;
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .nav-links {
+        min-width: 900px;
+        max-width: 900px;
+    }
+}
+
+@keyframes link-animation-1 {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes link-animation-2 {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

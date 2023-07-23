@@ -1,0 +1,97 @@
+.select-color{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    background-color: #f1f1f1;
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    padding: 30px 20px;
+    @include column-center;
+    justify-content: flex-start;
+    z-index: 999999;
+    opacity: 0;
+    &.active{
+        left: 0;
+        opacity: 1;
+    }
+    .title{
+        text-transform: uppercase;
+        color: rgba(0,0,0,0.3);
+    }
+    .row{
+        width: 100%;
+        padding: 30px 0;
+        .col-12{
+            margin-bottom: 25px;
+        }
+    }
+    .color-item{
+        width: 100%;
+        height: 90px;
+        @include center;
+        cursor: pointer;
+        transition: all 0.2s;
+        
+        &.enable{
+            opacity: 1;
+        }
+        &.disable{
+            animation: hide-color 0.5s ease forwards;
+        }
+        span{
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0;
+            transform: scale(0);
+        }
+        &:hover{
+            span{
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .select-color{
+        .color-item{
+            height: 200px;
+        }
+    }
+}
+@media only screen and (min-width: 992px){
+    .select-color{
+        .color-item{
+            height: 250px;
+        }
+    }
+}
+@media only screen and (min-width: 1400px){
+    .select-color{
+        .color-item.mh{
+            height: 70vh;
+        }
+    }
+}
+
+@keyframes show-color{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes hide-color{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

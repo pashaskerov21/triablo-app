@@ -1,0 +1,140 @@
+.time-counter {
+    @include s-between;
+    width: 90%;
+    max-width: 800px;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 45px;
+
+    .circle {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform: rotate(270deg);
+
+            circle {
+                width: 100%;
+                height: 100%;
+                fill: transparent;
+                stroke-width: 8;
+                stroke: #fff;
+                stroke-linecap: round;
+                transform: translate(5px, 5px);
+
+                &:nth-child(2) {
+                    stroke: var(--primary-color);
+                    stroke-dasharray: 440;
+                    stroke-dashoffset: 440;
+                }
+
+            }
+        }
+
+        .circle-inner {
+            position: absolute;
+            @include column-center;
+            color: #fff;
+            text-align: center;
+
+            .time-value {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                @include center;
+                background-color: var(--primary-color);
+                color: #fff;
+            }
+
+            .label {
+                font-size: 12px;
+                margin-top: 10px;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+
+        .dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 1000;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -3px;
+                width: 15px;
+                height: 15px;
+                background: var(--primary-color);
+                border-radius: 50%;
+                box-shadow: 0 0 20px var(--primary-color),
+                    0 0 60px var(--primary-color);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .time-counter {
+        .circle {
+            .circle-inner {
+                .time-value {
+                    font-size: 25px;
+                    width: 75px;
+                    height: 75px;
+                }
+
+                .label {
+                    font-size: 16px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .time-counter {
+        width: 100%;
+
+        .circle {
+            width: 150px;
+            height: 150px;
+
+            .circle-inner {
+                .time-value {
+                    font-size: 30px;
+                    width: auto;
+                    height: auto;
+                    background-color: transparent;
+                }
+
+                .label {
+                    font-size: 14px;
+                    margin-top: 10px;
+                    font-weight: 500;
+                }
+            }
+
+            svg {
+                display: inline-block;
+            }
+
+            .dots {
+                display: flex;
+            }
+        }
+    }
+}

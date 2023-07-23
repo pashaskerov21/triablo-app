@@ -1,0 +1,28 @@
+@import 'mixin';
+@import 'root';
+@import 'animation';
+@import 'basic';
+
+// components 
+@import 'components/ScrollButton';
+@import 'components/Logo';
+@import 'components/MenuButton';
+@import 'components/CloseButton';
+@import 'components/Timer';
+@import 'components/BasketButton';
+@import 'components/ProductCard';
+
+
+// Layout
+@import 'layout/color-selection/color-selection';
+@import 'layout/header/HeaderMain';
+@import 'layout/products/ProductsMain';
+@import 'layout/products/BasketOffcanvas';
+@import 'layout/brand/BrandSection';
+@import 'layout/why/WhySection';
+@import 'layout/team/TeamSection';
+@import 'layout/review/ReviewSection';
+@import 'layout/news/NewsSection';
+@import 'layout/about-us/AboutUsSecion';
+@import 'layout/contact/ContactSection';
+@import 'layout/footer/footer';

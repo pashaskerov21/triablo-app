@@ -1,0 +1,23 @@
+.page-scroll-button{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    z-index: 99;
+    animation: scroll-button 1s ease forwards;
+    &:hover{
+        border-radius: 50%;
+        color: #fff;
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+    }
+}

@@ -1,0 +1,68 @@
+.team-section{
+    padding: 30px 0;
+    h1,h2,h3{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .description{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .team-card{
+        max-width: 300px;
+        img{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .bottom{
+            position: relative;
+            width: 100%;
+            @include column-center;
+        }
+        .info{
+            width: 100%;
+            @include column-center;
+            text-align: center;
+            .name{
+                font-size: 22px;
+            }
+        }
+        .sosial-icons{
+            width: 80%;
+            padding: 10px 0;
+            @include s-evenly;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            a{
+                color: #000;
+                opacity: 0;
+                transform: translateY(-50px);
+                &:hover{
+                    color: var(--primary-color);
+                }
+                
+            }
+        }
+        &:hover{
+            .info{
+                opacity: 0;
+            }
+            .sosial-icons{
+                opacity: 1;
+                a{
+                    animation: sosial-icon-animation 0.5s ease forwards;
+                }
+            }
+        }
+    }
+}
+
+@keyframes sosial-icon-animation{
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

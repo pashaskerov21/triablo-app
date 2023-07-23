@@ -1,0 +1,115 @@
+/*---------------BASIC---------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    display: block;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+a, a:hover, a:active, a:visited {
+    text-decoration: none;
+}
+p{
+    margin: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center
+}
+button {
+    @include center;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;  
+}
+a, button, div, span, p, img, label{
+    transition: 0.3s;
+    -o-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -webkit-transition: 0.3s;
+}
+a:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+    width: 100%;
+    height: 1px;
+    transition: 0.3s;
+    transform: scaleX(0);
+    background-color: transparent;
+}
+
+main{
+    width: 100%;
+}
+section{
+    width: 100%;
+    margin-bottom: 30px;
+    .container{
+        @include column-center;
+    }
+}
+div[class~="col"]{
+    padding: 0;
+}
+.col-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.col-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col-end{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.rotate-180{
+    transform: rotate(-180deg);
+}
+.rotate-90{
+    transform: rotate(-90deg);
+}
+.m-right{
+    margin-right: 10px;
+}
+
+.swiper{
+    width: 100%;
+    .swiper-slide{
+        width: 100%;
+        @include center;
+    }
+}

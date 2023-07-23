@@ -1,0 +1,38 @@
+.basket-button{
+    font-size: 26px;
+    position: relative;
+    span{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 500;
+        @include center;
+        text-align: center;
+        &.active{
+            animation: basket-badge 0.5s ease 1;
+        }
+    }
+}
+@keyframes basket-badge{
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

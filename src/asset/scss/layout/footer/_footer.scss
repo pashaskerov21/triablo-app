@@ -1,0 +1,39 @@
+footer{
+    width: 100%;
+    background-color: #3c3c3c;
+    padding: 30px;
+    min-height: 20vh;
+    @include center;
+    .container{
+        @include center;
+    }
+    .row{
+        width: 100%;
+        .col-12{
+            @include center;
+            span{
+                color: #fff;
+                text-align: center;
+            }
+            .footer-col{
+                width: 100%;
+                @include column-center;
+                padding: 20px 10px;
+                .contact-item{
+                    @include center;
+                    flex-wrap: wrap;
+                    span{
+                        color: #fff;
+                        margin-right: 8px;
+                    }
+                    a,button{
+                        color: rgba(255,255,255,0.7);
+                        &:hover{
+                            color: var(--primary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

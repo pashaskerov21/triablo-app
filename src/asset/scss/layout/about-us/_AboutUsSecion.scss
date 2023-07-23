@@ -1,0 +1,52 @@
+.about-us-section{
+    @include center;
+    padding: 40px 0;
+    min-height: 250px;
+    background-color: #f1f1f1;
+    margin-bottom: 0;
+    .row{
+        width: 100%;
+        .col-12{
+            @include center;
+        }
+    }
+    .counter-item{
+        width: 100%;
+        max-width: 300px;
+        @include column-center;
+        .icon{
+            position: relative;
+            @include center;
+            padding: 15px;
+            margin-bottom: 20px;
+            img{
+                max-width: 100px;
+                max-height: 100px;  
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 20px;
+                height: 2px;
+                background-color: #9C9C9C;
+                transition: all 0.2s;
+            }
+        }
+        .count{
+            font-size: 26px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        &:hover{
+            .icon{
+                &::after{
+                    background-color: var(--primary-color);
+                }
+            }
+        }
+        
+    }
+}
