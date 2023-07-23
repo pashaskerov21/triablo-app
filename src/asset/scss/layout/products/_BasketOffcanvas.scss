@@ -8,8 +8,10 @@
     left: -100%;
     z-index: 999;
     padding: 20px;
+    opacity: 0;
     &.active{
-        left: 0
+        left: 0;
+        opacity: 1;
     }
     .header{
         @include s-between;
